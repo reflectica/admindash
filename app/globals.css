@@ -3,19 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  /* Text color */
+  --foreground-rgb: 158, 158, 158, 1; 
+  /* Gradient color for background */
+  --background-start-rgb: 255, 255, 255, 1;
+  /* Gradient color for background */
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* section applies when user's system theme is set to dark mode, it overrides, this is set from user's OS */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
+/*  */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
