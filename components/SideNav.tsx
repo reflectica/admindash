@@ -37,27 +37,27 @@ export default function SideNav({ showNav, setShowNav }: SideNavProps) {
             >
                 <ul className='p-5'>
                     <Link href='/dashboard'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             Reflectica x Client Logo
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={overviewIcon} height={20} width={20} className="mr-2" alt="overviewIcon" />Overview
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={analyticsIcon} height={20} width={20} className="mr-2" alt="analyticsIcon" />Analytics
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={clinicIcon} height={20} width={20} className="mr-2" alt="clinicIcon" />Clinic Referrals
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={licensesIcon} height={20} width={20} className="mr-2" alt="licensesIcon" />Licenses
                         </li>
                     </Link>
@@ -65,22 +65,22 @@ export default function SideNav({ showNav, setShowNav }: SideNavProps) {
                     <li className="border-t border-gray-300 my-4"></li>
 
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={helpIcon} height={20} width={20} className="mr-2" alt="helpIcon" />Help Center
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={communityIcon} height={20} width={20} className="mr-2" alt="communityIcon" />Community
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 active:text-slate-800">
                             <Image src={settingsIcon} height={20} width={20} className="mr-2" alt="settingsIcon" />Settings
                         </li>
                     </Link>
                     <Link href='/'>
-                        <li className="flex flex-row py-4 hover:bg-gray-700">
+                        <li className="flex flex-row py-4 hover:border-l border-gray-700 font-bold">
                             <Image src={logoutIcon} height={20} width={20} className="mr-2" alt="logoutIcon" />Logout
                         </li>
                     </Link>
