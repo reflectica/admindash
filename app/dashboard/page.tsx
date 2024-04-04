@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthenticatedLayout } from '@/components'
+import { AuthenticatedLayout, LineGraph } from '@/components'
 import Image from 'next/image'
 import magnifyingIcon from '@/public/icons/magnifyingIcon.png'
 import mailIcon from '@/public/icons/mail.png'
@@ -28,7 +28,8 @@ export default function Dashboard() {
                         <>
                             <h2 className="text-lg font-semibold text-gray-700">Team Usage</h2>
                             <div className="bg-white shadow rounded-lg p-4 col-span-1 md:col-span-2 lg:col-span-3">
-                                {/* TEAM USAGE GOES HERE */}
+                                <LineGraph />
+
                             </div>
                         </>                 
                     
@@ -45,7 +46,7 @@ export default function Dashboard() {
                         <div className='flex flex-col'>
                             <h2 className="text-lg font-semibold text-gray-700">Team Mental Health Score</h2>
                             <div className="bg-white shadow rounded-lg p-4">
-                                {/* GRAPH GOES HERE */}
+                                <LineGraph />
                             </div>
                         </div>
                     </div>
