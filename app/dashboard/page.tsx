@@ -32,8 +32,6 @@ export default function Dashboard() {
 
                             </div>
                         </>                 
-                    
-
                         <div className='flex flex-col'>
                             <h2 className="text-lg font-semibold text-gray-700">Clinical Referals</h2>
                             <div className="bg-white shadow rounded-lg p-4">
