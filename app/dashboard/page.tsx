@@ -50,13 +50,12 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <div className='h-screen w-1/3 border-l border-gray-300'>
-                    <div className='flex flex-row justify-end'>
-                        <div className='flex flex-row justify-strech'>
-                        <Image src={mailIcon} width={30} height={30} alt='mail icon' />
-                        <Image src={inboxIcon} width={30} height={30} alt='inbox icon' />
-                        <Image src={profileIcon} width={30} height={30} alt='profile icon' />
-                        </div>
-                       
+                    <div className='flex flex-row justify-end p-5 m-5 gap-5'>
+                        {/* <div className='flex flex-row justify-strech'> */}
+                            <Image src={mailIcon} width={30} height={30} alt='mail icon' />
+                            <Image src={inboxIcon} width={30} height={30} alt='inbox icon' />
+                            <Image src={profileIcon} width={30} height={30} alt='profile icon' />
+                        {/* </div> */}
                     </div>
                     <div className='h-3/6 flex flex-col m-10'>
                         <h2 className="text-md font-semibold text-gray-700 my-2 text-center">Estimated Employee Productivity Boost</h2>
