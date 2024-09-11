@@ -12,7 +12,7 @@ export default function Dashboard() {
             <div className='w-full flex flex-row'>
                 <div className="p-4 w-2/3">
                     <div className='flex flex-row justify-between items-center'>
-                        <h1 className="text-2xl font-bold text-gray-800">Welcome! 👋</h1>
+                        <h1 className="text-2xl font-extrabold leading-8 text-gray-800">Welcome! 👋</h1>
                         <form className='flex flex-row bg-gray-100 rounded-lg items-center'>
                             <div className="pl-3 pr-2">
                                 <Image src={magnifyingIcon} width={16} height={16} alt='Search' />
