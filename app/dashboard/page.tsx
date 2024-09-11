@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthenticatedLayout, LineGraph } from '@/components'
+import { AuthenticatedLayout, LineGraph, SectionCard } from '@/components'
 import Image from 'next/image'
 import magnifyingIcon from '@/public/icons/magnifyingIcon.png'
 import mailIcon from '@/public/icons/mail.png'
@@ -13,14 +13,16 @@ export default function Dashboard() {
                 <div className="p-4 w-2/3">
                     <div className='flex flex-row justify-between items-center'>
                         <h1 className="text-2xl font-bold text-gray-800">Welcome! 👋</h1>
-                        <form className='flex flex-row bg-gray-300 rounded-lg'>
-                            <Image src={magnifyingIcon} width={19}  alt='Search' />
+                        <form className='flex flex-row bg-gray-100 rounded-lg items-center'>
+                            <div className="pl-3 pr-2">
+                                <Image src={magnifyingIcon} width={16} height={16} alt='Search' />
+                            </div>
                             <input 
                                 type="text"
                                 id="inputField"
                                 name="inputName"
                                 placeholder="Search"
-                                className="block w-full pl-3 pr-3 py-2 bg-transparent focus:outline-none"
+                                className="block w-full pl-1 pr-3 py-2 bg-transparent focus:outline-none"
                             />
                         </form>
                     </div>
@@ -55,25 +57,23 @@ export default function Dashboard() {
                         <Image src={inboxIcon} width={30} height={30} alt='inbox icon' />
                         <Image src={profileIcon} width={30} height={30} alt='profile icon' />
                     </div>
-                    <div className='h-3/6 flex flex-col m-10 text-center'>
-                        <p className="font-extrabold text-sm leading-3 text-black my-2">Estimated Employee Productivity Boost</p>
-                        <div className='bg-white shadow rounded-lg p-4 gap-5 flex flex-col'>
-                            <p className='font-medium text-xs leading-2 text-gray-300'>This month you saved</p>
-                            {/* Temporarily hard coded information */}
-                            <p className='font-medium text-4xl leading-3 text-black'>$12,281</p>
-                            <p className='font-medium text-xs leading-2 text-gray-300'>Calculated from employee salaries x estimated added productivity value. </p>
-                            <div className="">
-                                {/* GRAPH GOES HERE */}
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className='h-2/6 flex flex-col m-10'>
-                        <h2 className="text-md font-semibold text-gray-700 my-2 text-center">Purchase More Licenses</h2>
-                        <div className="bg-white shadow rounded-lg p-4">
+                    <SectionCard 
+                        title={"Estimated Employee Productivity Boost"} 
+                        containerStyle={'h-3/6 flex flex-col m-10 text-center'}
+                    >
+                        <p className='font-medium text-xs leading-2 text-gray-300'>This month you saved</p>
+                        {/* Temporarily hard coded information */}
+                        <p className='font-medium text-4xl leading-3 text-black'>$12,281</p>
+                        <p className='font-medium text-xs leading-2 text-gray-300'>Calculated from employee salaries x estimated added productivity value. </p>
+                        <div className="">
                             {/* GRAPH GOES HERE */}
                         </div>
-                    </div>
+                    </SectionCard>
+                    <SectionCard title={"Purchase More Licenses"} containerStyle={"h-2/6 flex flex-col m-10 text-center"}>
+                        {/* GRAPH GOES HERE */}
+                        <></>
+                    </SectionCard>
                 </div>
             </div>
         </AuthenticatedLayout>
