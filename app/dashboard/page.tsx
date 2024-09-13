@@ -26,6 +26,7 @@ export default function Dashboard() {
                             />
                         </form>
                     </div>
+                    {/* Section goes here */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">   
                         <>
                             <h2 className="text-lg font-semibold text-gray-700">Team Usage</h2>
