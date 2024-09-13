@@ -7,6 +7,15 @@ import inboxIcon from '@/public/icons/inbox.png'
 import profileIcon from '@/public/icons/profile.png'
 
 export default function Dashboard() {
+    const tempData = [
+        { id: 9, date: "November 12, 2021", time: "4:45AM"},
+        { id: 10, date: "November 12, 2021", time: "4:45AM"},
+        { id: 11, date: "November 12, 2021", time: "4:45AM"},
+        { id: 12, date: "November 12, 2021", time: "4:45AM"},
+        { id: 13, date: "November 12, 2021", time: "4:45AM"},
+        { id: 14, date: "November 12, 2021", time: "4:45AM"},
+    ]
+
     return (
         <AuthenticatedLayout>
             <div className='w-full flex flex-row'>
@@ -27,29 +36,33 @@ export default function Dashboard() {
                         </form>
                     </div>
                     {/* Section goes here */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">   
-                        <>
-                            <h2 className="text-lg font-semibold text-gray-700">Team Usage</h2>
-                            <div className="bg-white shadow rounded-lg p-4 col-span-1 md:col-span-2 lg:col-span-3">
-                                <LineGraph />
 
-                            </div>
-                        </>                 
-                        <div className='flex flex-col'>
-                            <h2 className="text-lg font-semibold text-gray-700">Clinical Referals</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">   
+                        <SectionCard title={'Team Usage'} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-3'}>
+                            <LineGraph />
+                        </SectionCard>
+                        <SectionCard title={"Clinical Referals"}>
+                            {tempData.map((data, i) => (
+                                <div key={i} className='flex flex-row'>
+                                    <>Add button</>
+                                    <div className='flex flex-row'>
+                                        <p>Appointment Set</p>
+                                        <p>{data.date} {data.time}</p>
+                                    </div>
+                                    <p>#{data.id}</p>
+                                </div>
+                            ))}
+                        </SectionCard>
+                        {/* <div className='flex flex-col'>
                             <div className="bg-white shadow rounded-lg p-4">
                                 <p className="text-gray-900 text-xl">
-                                    {/* GRAPH GOES HERE */}
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
+                        <SectionCard title={"Team Mental Health Score"}>
+                            <LineGraph />
+                        </SectionCard>
 
-                        <div className='flex flex-col'>
-                            <h2 className="text-lg font-semibold text-gray-700">Team Mental Health Score</h2>
-                            <div className="bg-white shadow rounded-lg p-4">
-                                <LineGraph />
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className='h-screen w-1/3 border-l border-gray-300'>

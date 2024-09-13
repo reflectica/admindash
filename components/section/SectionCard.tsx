@@ -2,7 +2,7 @@ import React from 'react'
 
 interface SectionCardProps {
     title: string;
-    containerStyle: string;
+    containerStyle?: string;
     children: React.ReactNode;
 }
 
