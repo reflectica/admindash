@@ -15,8 +15,15 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'custom-gray': 'rgba(230, 230, 230, 1)'
-      }
+        'custom-gray': 'rgba(230, 230, 230, 1)',
+        'custom-blue': '#5271FF',
+        'light-grey':'#BDBDBD',
+        'custom-license-gray': '#A5A5A5',
+        'custom-divider-gray': '#E6E6E6'
+      },
+      fontFamily: {
+        'urbanist': ['Urbanist', 'sans-serif'], 
+      },
     },
   },
   plugins: [],

@@ -1,10 +1,21 @@
 import React from 'react'
 import { AuthenticatedLayout, LineGraph, SectionCard } from '@/components'
 import Image from 'next/image'
+import morePeople from '@/public/icons/morePeople.png'
 import magnifyingIcon from '@/public/icons/magnifyingIcon.png'
 import mailIcon from '@/public/icons/mail.png'
 import inboxIcon from '@/public/icons/inbox.png'
 import profileIcon from '@/public/icons/profile.png'
+import addIcon from '@/public/icons/addIcon.png'
+import profile1 from '@/public/profileicons/profile1.png'
+import profile2 from '@/public/profileicons/profile2.png'
+import profile3 from '@/public/profileicons/profile3.png'
+import profile4 from '@/public/profileicons/profile4.png'
+import profile5 from '@/public/profileicons/profile5.png'
+import addProfile from '@/public/profileicons/addprofile.png'
+
+import {formatDate} from '@/utils/formatDate'
+import LineDivider from '@/components/LineDivider'
 
 export default function Dashboard() {
     const tempData = [
@@ -15,6 +26,7 @@ export default function Dashboard() {
         { id: 13, date: "November 12, 2021", time: "4:45AM"},
         { id: 14, date: "November 12, 2021", time: "4:45AM"},
     ]
+    const profileImages = [profile1, profile2, profile3, profile4, profile5, addProfile];
 
     return (
         <AuthenticatedLayout>
@@ -42,14 +54,18 @@ export default function Dashboard() {
                             <LineGraph />
                         </SectionCard>
                         <SectionCard title={"Clinical Referals"}>
-                            {tempData.map((data, i) => (
-                                <div key={i} className='flex flex-row'>
-                                    <>Add button</>
-                                    <div className='flex flex-row'>
-                                        <p>Appointment Set</p>
-                                        <p>{data.date} {data.time}</p>
+                            {tempData.slice(0, 4).map((data, i) => (
+                                <div key={i} className='flex flex-row gap-2 items-center'>
+                                    <div className='bg-custom-blue w-14 h-14 rounded-md flex items-center justify-center'>
+                                        <Image src={addIcon} width={30} height={30} alt='AddIcon'/>
                                     </div>
-                                    <p>#{data.id}</p>
+                                    <div className='flex flex-col'>
+                                        <p className='text-black text-sm font-extrabold leading-3'>Appointment Set</p>
+                                        <p className='text-light-grey text-xs font-medium leading-2'>
+                                            {formatDate(data.date, data.time)}
+                                        </p>
+                                    </div>
+                                    <p className='text-black text-sm font-extrabold leading-3'>#{data.id}</p>
                                 </div>
                             ))}
                         </SectionCard>
@@ -59,7 +75,19 @@ export default function Dashboard() {
                                 </p>
                             </div>
                         </div> */}
-                        <SectionCard title={"Team Mental Health Score"}>
+                        <SectionCard title={"Team Mental Health Score"} containerStyle=''>
+                            <p>Average Score</p>
+                            {/* TEMP HARD CODED SCORE */}
+                            <p>8.4</p>
+
+                            {/* FILTER FEATURE */}
+                            <ul className='flex flex-row'>
+                                <li>Day</li>
+                                <li>Week</li>
+                                <li>Month</li>
+                                <li>Year</li>
+                            </ul>
+
                             <LineGraph />
                         </SectionCard>
 
@@ -85,8 +113,32 @@ export default function Dashboard() {
                         </div>
                     </SectionCard>
                     <SectionCard title={"Purchase More Licenses"} containerStyle={"h-2/6 flex flex-col m-10 text-center"}>
-                        {/* GRAPH GOES HERE */}
-                        <></>
+                        <div className='flex flex-row items-center gap-1'>
+                            <Image src={morePeople} width={13} height={13} alt='more people icon' />
+                            <p className='text-custom-license-gray text-xs leading-2 font-medium'>Purchase more licenses for your team</p>
+                        </div>
+                        <div className='flex flex-row justify-center gap-2'>
+                            <p className='text-4xl text-black font-extrabold leading-9'>$2000</p>
+                            <button 
+                                type='button' 
+                                className='w-28 h-9 bg-custom-blue text-white rounded-md text-xs font-extrabold leading-2'
+                            >
+                                Buy 10
+                            </button>
+                        </div>
+                        <LineDivider style={''}/>
+                        <div className='flex flex-row'>
+                            {profileImages.map((image, index) => (
+                                <div 
+                                    key={index}
+                                    className={`w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white ${
+                                        index !== 0 ? '-ml-4' : ''
+                                    }`}
+                                >
+                                    <Image src={image} width={30} height={30} alt={`Profile ${index + 1}`} className="object-cover rounded-full" />
+                                </div>
+                            ))}
+                        </div>
                     </SectionCard>
                 </div>
             </div>
