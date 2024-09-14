@@ -16,16 +16,10 @@ import addProfile from '@/public/profileicons/addprofile.png'
 
 import {formatDate} from '@/utils/formatDate'
 import LineDivider from '@/components/LineDivider'
+import { tempData } from '@/constants/TempData'
 
 export default function Dashboard() {
-    const tempData = [
-        { id: 9, date: "November 12, 2021", time: "4:45AM"},
-        { id: 10, date: "November 12, 2021", time: "4:45AM"},
-        { id: 11, date: "November 12, 2021", time: "4:45AM"},
-        { id: 12, date: "November 12, 2021", time: "4:45AM"},
-        { id: 13, date: "November 12, 2021", time: "4:45AM"},
-        { id: 14, date: "November 12, 2021", time: "4:45AM"},
-    ]
+
     const profileImages = [profile1, profile2, profile3, profile4, profile5, addProfile];
 
     return (
@@ -49,12 +43,12 @@ export default function Dashboard() {
                     </div>
                     {/* Section goes here */}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                        <SectionCard title={'Team Usage'} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-3'}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                        <SectionCard title={'Team Usage'} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-4'}>
                             <LineGraph />
                         </SectionCard>
-                        <SectionCard title={"Clinical Referals"}>
-                            {tempData.slice(0, 4).map((data, i) => (
+                        <SectionCard title={"Clinical Referals"} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-2'}>
+                            {tempData.slice(0, 4).map((data: any, i: number) => (
                                 <div key={i} className='flex flex-row gap-2 items-center'>
                                     <div className='bg-custom-blue w-14 h-14 rounded-md flex items-center justify-center'>
                                         <Image src={addIcon} width={30} height={30} alt='AddIcon'/>
@@ -69,19 +63,14 @@ export default function Dashboard() {
                                 </div>
                             ))}
                         </SectionCard>
-                        {/* <div className='flex flex-col'>
-                            <div className="bg-white shadow rounded-lg p-4">
-                                <p className="text-gray-900 text-xl">
-                                </p>
-                            </div>
-                        </div> */}
-                        <SectionCard title={"Team Mental Health Score"} containerStyle=''>
-                            <p>Average Score</p>
+
+                        <SectionCard title={"Team Mental Health Score"} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-2'}>
+                            <p className='text-xs font-medium leading-2 text-center'>Average Score</p>
                             {/* TEMP HARD CODED SCORE */}
-                            <p>8.4</p>
+                            <p className='text-5xl text-black text-center font-extrabold leading-10'>8.4</p>
 
                             {/* FILTER FEATURE */}
-                            <ul className='flex flex-row'>
+                            <ul className='flex flex-row text-xs justify-center gap-2'>
                                 <li>Day</li>
                                 <li>Week</li>
                                 <li>Month</li>
@@ -102,17 +91,20 @@ export default function Dashboard() {
 
                     <SectionCard 
                         title={"Estimated Employee Productivity Boost"} 
-                        containerStyle={'h-3/6 flex flex-col m-10 text-center'}
+                        containerStyle={'flex flex-col m-10 text-center'}
                     >
                         <p className='font-medium text-xs leading-2 text-gray-300'>This month you saved</p>
                         {/* Temporarily hard coded information */}
-                        <p className='font-medium text-4xl leading-3 text-black'>$12,281</p>
+                        <p className='font-medium text-4xl leading-3 text-black my-3'>$12,281</p>
                         <p className='font-medium text-xs leading-2 text-gray-300'>Calculated from employee salaries x estimated added productivity value. </p>
                         <div className="">
                             {/* GRAPH GOES HERE */}
                         </div>
                     </SectionCard>
-                    <SectionCard title={"Purchase More Licenses"} containerStyle={"h-2/6 flex flex-col m-10 text-center"}>
+                    <SectionCard 
+                        title={"Purchase More Licenses"} 
+                        containerStyle={"flex flex-col m-10 text-center gap-2"}
+                    >
                         <div className='flex flex-row items-center gap-1'>
                             <Image src={morePeople} width={13} height={13} alt='more people icon' />
                             <p className='text-custom-license-gray text-xs leading-2 font-medium'>Purchase more licenses for your team</p>
@@ -132,7 +124,7 @@ export default function Dashboard() {
                                 <div 
                                     key={index}
                                     className={`w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white ${
-                                        index !== 0 ? '-ml-4' : ''
+                                        index !== 0 ? '-ml-5 md:-ml-8' : ''
                                     }`}
                                 >
                                     <Image src={image} width={30} height={30} alt={`Profile ${index + 1}`} className="object-cover rounded-full" />
