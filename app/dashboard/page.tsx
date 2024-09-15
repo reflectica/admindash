@@ -1,5 +1,6 @@
+"use client"
 import React from 'react'
-import { AuthenticatedLayout, LineGraph, SectionCard } from '@/components'
+import { AuthenticatedLayout, SectionCard } from '@/components'
 import Image from 'next/image'
 import morePeople from '@/public/icons/morePeople.png'
 import magnifyingIcon from '@/public/icons/magnifyingIcon.png'
@@ -18,9 +19,10 @@ import {formatDate} from '@/utils/formatDate'
 import LineDivider from '@/components/LineDivider'
 import { tempData } from '@/constants/TempData'
 
+import LineGraph from '@/components/graph/ExampleLineGraph'
 export default function Dashboard() {
-
     const profileImages = [profile1, profile2, profile3, profile4, profile5, addProfile];
+
 
     return (
         <AuthenticatedLayout>
@@ -45,11 +47,26 @@ export default function Dashboard() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                         <SectionCard title={'Team Usage'} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-4'}>
+                            <div className='flex flex-row justify-between items-center'>
+                                <span 
+                                    className='bg-custom-usage-gray w-20 h-5 overflow-hidden rounded-xl text-white font-extrabold text-sm leading-2 text-center '
+                                >
+                                    Usage (Min)
+                                </span>
+                                <div className='flex flex-row items-center gap-1'>
+                                    <label htmlFor="filter" className=''>Sort by</label>
+                                    <select id='filter' name="options" aria-label="Options" className="bg-gray-100 rounded-lg p-2">
+                                        <option value="month">Month</option>
+                                        <option value="month">Week</option>
+                                        <option value="month">Year</option>
+                                    </select>
+                                </div>
+                            </div>
                             <LineGraph />
                         </SectionCard>
                         <SectionCard title={"Clinical Referals"} containerStyle={'p-4 col-span-1 md:col-span-2 lg:col-span-2'}>
                             {tempData.slice(0, 4).map((data: any, i: number) => (
-                                <div key={i} className='flex flex-row gap-2 items-center'>
+                                <div key={i} className='flex flex-row gap-2 items-center justify-around'>
                                     <div className='bg-custom-blue w-14 h-14 rounded-md flex items-center justify-center'>
                                         <Image src={addIcon} width={30} height={30} alt='AddIcon'/>
                                     </div>
