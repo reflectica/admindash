@@ -8,7 +8,7 @@ import mailIcon from '@/public/icons/mail.png'
 import inboxIcon from '@/public/icons/inbox.png'
 import profileIcon from '@/public/icons/profile.png'
 import addIcon from '@/public/icons/addIcon.png'
-import {profile1, profile2, profile3, profile4, profile5, addProfile, profileImages} from '@/public/profileicons';
+import { profileImages } from '@/public/profileicons';
 import {formatDate} from '@/utils/formatDate'
 import LineDivider from '@/components/LineDivider'
 import { tempData } from '@/constants/TempData'
