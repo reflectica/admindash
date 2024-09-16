@@ -8,22 +8,14 @@ import mailIcon from '@/public/icons/mail.png'
 import inboxIcon from '@/public/icons/inbox.png'
 import profileIcon from '@/public/icons/profile.png'
 import addIcon from '@/public/icons/addIcon.png'
-import profile1 from '@/public/profileicons/profile1.png'
-import profile2 from '@/public/profileicons/profile2.png'
-import profile3 from '@/public/profileicons/profile3.png'
-import profile4 from '@/public/profileicons/profile4.png'
-import profile5 from '@/public/profileicons/profile5.png'
-import addProfile from '@/public/profileicons/addprofile.png'
-
+import {profile1, profile2, profile3, profile4, profile5, addProfile, profileImages} from '@/public/profileicons';
 import {formatDate} from '@/utils/formatDate'
 import LineDivider from '@/components/LineDivider'
 import { tempData } from '@/constants/TempData'
 
 import LineGraph from '@/components/graph/ExampleLineGraph'
 export default function Dashboard() {
-    const profileImages = [profile1, profile2, profile3, profile4, profile5, addProfile];
-
-
+    // const profileImages = [profile1, profile2, profile3, profile4, profile5, addProfile];
     return (
         <AuthenticatedLayout>
             <div className='w-full flex flex-row'>
